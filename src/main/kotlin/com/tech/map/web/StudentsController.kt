@@ -15,12 +15,12 @@ class StudentsController (private var studentService: StudentService){
     fun getAll(): MutableIterable<Student> {
         return studentService.getAll()
     }
-    @GetMapping("/api/students/{id}")
+    @GetMapping("/api/students/{id}/")
     fun get(@PathVariable id: Int): Student {
         return studentService.getByID(id)
     }
 
-    @DeleteMapping("/api/students/{id}")
+    @DeleteMapping("/api/students/{id}/")
     fun remove(@PathVariable id: Int) {
         studentService.remove(id)
     }

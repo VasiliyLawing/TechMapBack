@@ -14,12 +14,12 @@ class CompaniesController(var companyService: CompanyService) {
     fun getAll(): Iterable<Company> {
         return companyService.getAll()
     }
-    @GetMapping("/api/companies/{id}")
+    @GetMapping("/api/companies/{id}/")
     fun get(@PathVariable id: Int): Company {
         return companyService.getByID(id)
     }
 
-    @DeleteMapping("/api/companies/{id}")
+    @DeleteMapping("/api/companies/{id}/")
     fun delete(@PathVariable id: Int) {
         companyService.remove(id)
     }

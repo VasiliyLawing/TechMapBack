@@ -5,7 +5,9 @@ INSERT INTO students (name, latitude, longitude, field) VALUES
 
 
 INSERT INTO companies (name, latitude, longitude, field) VALUES
+                                                            ('Apple', 42.38083525124947, -87.95866242954418,  'Cyber'),
                                                             ('Apple', 42.38083525124947, -87.95866242954418,  'Cyber');
+
 
 --     ('NAme', 42.38083525124947, -87.98866242954418,  'Medical'),
 --     ('Apple', 42.38083525124947, -87.95866242954418,  'Cyber'),
