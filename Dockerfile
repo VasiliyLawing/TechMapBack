@@ -1,6 +1,9 @@
 # Stage 1: Build the application
 FROM gradle:7.2.0-jdk17 AS build
 COPY . .
+COPY gradlew .
+COPY gradlew.bat .
+RUN chmod +x gradlew
 RUN ./gradlew build
 
 # Stage 2: Create the final image
