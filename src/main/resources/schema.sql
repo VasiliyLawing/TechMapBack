@@ -8,7 +8,7 @@ CREATE TABLE "students" (
                             "name" text,
                             "latitude" decimal,
                             "longitude" decimal,
-                            "field" text
+                            field_id INT
 );
 
 DROP TABLE IF EXISTS "companies";
@@ -21,6 +21,12 @@ CREATE TABLE "companies" (
                              "name" text,
                              "latitude" decimal,
                              "longitude" decimal,
-                             "field" text
+                             field_id INT
                          );
 
+DROP TABLE IF EXISTS "fields";
+
+CREATE TABLE "fields" (
+    id INT,
+    "name" text
+)
