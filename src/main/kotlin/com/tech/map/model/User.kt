@@ -1,65 +1,51 @@
 package com.tech.map.model
 
-import jakarta.persistence.*
-import lombok.AllArgsConstructor
-import lombok.Builder
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
+import jakarta.persistence.Table
 import lombok.Data
-import lombok.NoArgsConstructor
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 
-
-enum class Role {
-    USER,
-    ADMIN
-}
-
-
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
-@Table(name = "users")
-class User : UserDetails {
+@Table(name="users")
+class User: UserDetails {
     @Id
-    @GeneratedValue
-    private val id: Int? = null
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private var id: Int? = null
 
-    private val username: String? = null
-    private val password: String? = null
-
-    @Enumerated(EnumType.STRING)
-    private val role: Role? = null
-
-    //@OneToMany(mappedBy = "user")
-    //private val tokens: List<Token>? = null
-    override fun getAuthorities(): Collection<GrantedAuthority?> {
-        return java.util.List.of(SimpleGrantedAuthority(role!!.name))
+    private var username: String? = null
+    private var password: String? = null
+    private var role: String? = null
+    override fun getAuthorities(): MutableCollection<out GrantedAuthority> {
+        return mutableListOf(SimpleGrantedAuthority(role))
     }
 
     override fun getPassword(): String {
-        return password!!
+        return password
     }
 
     override fun getUsername(): String {
-        return username!!
+        TODO("Not yet implemented")
     }
 
     override fun isAccountNonExpired(): Boolean {
-        return true
+        TODO("Not yet implemented")
     }
 
     override fun isAccountNonLocked(): Boolean {
-        return true
+        TODO("Not yet implemented")
     }
 
     override fun isCredentialsNonExpired(): Boolean {
-        return true
+        TODO("Not yet implemented")
     }
 
     override fun isEnabled(): Boolean {
-        return true
+        TODO("Not yet implemented")
     }
 }
