@@ -9,8 +9,8 @@ INSERT INTO companies (name, latitude, longitude, field) VALUES
                                                             ('Apple', 42.38083525124947, -87.95866242954418,  'Cyber');
 
 
-INSERT INTO users (name, password) VALUES
-                                       ('admin', 'password')
+INSERT INTO users (username, password, role) VALUES
+                                       ('admin', 'password', 'admin')
 
 
 --     ('NAme', 42.38083525124947, -87.98866242954418,  'Medical'),

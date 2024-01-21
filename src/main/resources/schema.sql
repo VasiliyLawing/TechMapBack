@@ -24,8 +24,11 @@ CREATE TABLE "companies" (
                              "field" text
                          );
 
+DROP TABLE IF EXISTS "users";
+
 CREATE TABLE "users" (
                          id SERIAL PRIMARY KEY,
-                         "name" text,
-                         "password" text
+                         "username" text,
+                         "password" text,
+                         "role" text
                      );
