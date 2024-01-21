@@ -1,5 +1,6 @@
 package com.tech.map.config
 
+import com.tech.map.model.Role
 import com.tech.map.service.UserDetailsService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
@@ -27,22 +28,21 @@ class SecurityConfiguration(@Autowired private val userDetailsService: UserDetai
     fun securityFilterChain(httpSecurity: HttpSecurity): SecurityFilterChain {
         httpSecurity.csrf { obj: CsrfConfigurer<HttpSecurity> -> obj.disable() }
             .authorizeHttpRequests { request ->
-                request.requestMatchers("/auth/**", "public/**").permitAll()
-                    .requestMatchers("/api/**").hasAnyAuthority("ADMIN")
-                    .requestMatchers("/user/**").hasAnyAuthority("USER")
-                    .requestMatchers("/useradmin/**").hasAnyAuthority("USER", "ADMIN")
+                request
+                    .requestMatchers("/auth/**", "/public/**").permitAll()  // Updated here
+                    .requestMatchers("/api/**").hasAnyAuthority(Role.ADMIN.name)
+                    .requestMatchers("/user/**").hasAnyAuthority(Role.USER.name)
+                    .requestMatchers("/useradmin/**").hasAnyAuthority(Role.USER.name, Role.ADMIN.name)
                     .anyRequest().authenticated()
-            }.sessionManagement { manager: SessionManagementConfigurer<HttpSecurity?> ->
-                manager.sessionCreationPolicy(
-                    SessionCreationPolicy.STATELESS
-                )
             }
-            .authenticationProvider(authenticationProvider()).addFilterBefore(
-                jwtAuthFilter, UsernamePasswordAuthenticationFilter::class.java
-            )
+            .sessionManagement { manager: SessionManagementConfigurer<HttpSecurity?> ->
+                manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            }
+            .authenticationProvider(authenticationProvider())
+            .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter::class.java)
+
         return httpSecurity.build()
     }
-
     @Bean
     fun authenticationProvider(): AuthenticationProvider {
         val daoAuthenticationProvider = DaoAuthenticationProvider()

@@ -1,0 +1,2 @@
+GET localhost:8080/api/students/
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwNTg1NzU0NiwiZXhwIjoxNzA1OTQzOTQ2fQ.7jrIpAx0BN0z5vMD0xdyZSXjZ7-XOOSGi37XbrBLgRfZxH74D7twDjA3nr3OqZ_fV1nf0vGewLgFExVKfKp26g
