@@ -24,3 +24,8 @@ CREATE TABLE "companies" (
                              "field" text
                          );
 
+CREATE TABLE "users" (
+                         id SERIAL PRIMARY KEY,
+                         "name" text,
+                         "password" text
+                     );

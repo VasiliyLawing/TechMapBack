@@ -9,6 +9,10 @@ INSERT INTO companies (name, latitude, longitude, field) VALUES
                                                             ('Apple', 42.38083525124947, -87.95866242954418,  'Cyber');
 
 
+INSERT INTO users (name, password) VALUES
+                                       ('admin', 'password')
+
+
 --     ('NAme', 42.38083525124947, -87.98866242954418,  'Medical'),
 --     ('Apple', 42.38083525124947, -87.95866242954418,  'Cyber'),
 --     new Student("NAme", 42.38083525124947, -87.98866242954418,  "CyberSecurity")
