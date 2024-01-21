@@ -10,7 +10,7 @@ INSERT INTO companies (name, latitude, longitude, field) VALUES
 
 
 INSERT INTO users (username, password, role) VALUES
-                                       ('admin', 'password', 'admin')
+                                       ('admin', 'password', 'ADMIN')
 
 
 --     ('NAme', 42.38083525124947, -87.98866242954418,  'Medical'),

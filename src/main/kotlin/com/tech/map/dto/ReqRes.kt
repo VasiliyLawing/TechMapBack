@@ -2,6 +2,7 @@ package com.tech.map.dto
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonInclude
+import com.tech.map.model.Role
 import com.tech.map.model.User
 import lombok.Data
 
@@ -17,6 +18,6 @@ class ReqRes {
     var expirationDate: String? = null
     var username: String = ""
     var password: String = ""
-    var role: String = ""
+    var role: Role = Role.USER
     var user: User? = null
 }

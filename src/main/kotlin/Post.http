@@ -1,8 +1,8 @@
-POST localhost:8080/auth/signIn
+POST localhost:8080/auth/login/
 Content-Type: application/json
 
 {
-  "username": "billy",
+  "username": "admin",
   "password": "password"
- }
+}
 
