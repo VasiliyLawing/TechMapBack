@@ -13,14 +13,11 @@ import org.springframework.security.core.userdetails.UserDetails
 @Data
 @Entity
 @Table(name="users")
-class User: UserDetails {
+class User(private var username: String, private var password: String, private var role: String): UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private var id: Int? = null
 
-    private var username: String? = null
-    private var password: String? = null
-    private var role: String? = null
     override fun getAuthorities(): MutableCollection<out GrantedAuthority> {
         return mutableListOf(SimpleGrantedAuthority(role))
     }
@@ -30,22 +27,26 @@ class User: UserDetails {
     }
 
     override fun getUsername(): String {
-        TODO("Not yet implemented")
+        return username
+    }
+
+    fun getId(): Int? {
+        return id
     }
 
     override fun isAccountNonExpired(): Boolean {
-        TODO("Not yet implemented")
+        return true
     }
 
     override fun isAccountNonLocked(): Boolean {
-        TODO("Not yet implemented")
+        return true
     }
 
     override fun isCredentialsNonExpired(): Boolean {
-        TODO("Not yet implemented")
+        return true
     }
 
     override fun isEnabled(): Boolean {
-        TODO("Not yet implemented")
+        return true
     }
 }

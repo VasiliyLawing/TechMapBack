@@ -1,8 +1,8 @@
 package com.tech.map.dto
 
-import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonInclude
+import com.tech.map.model.User
 import lombok.Data
 
 
@@ -10,13 +10,13 @@ import lombok.Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 class ReqRes {
-    private var statusCode: Int? = null
-    private var message: String? = null
-    private var token: String? = null
-    private var refreshToken: String? = null
-    private var expirationDate: String? = null
-    private var name: String? = null
-    private var password: String? = null
-    private var role: String? = null
-    private var allUsers: String? = null
+    var statusCode: Int? = null
+    var message: String? = null
+    var token: String = ""
+    var refreshToken: String? = null
+    var expirationDate: String? = null
+    var username: String = ""
+    var password: String = ""
+    var role: String = ""
+    var user: User? = null
 }
