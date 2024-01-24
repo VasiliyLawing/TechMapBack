@@ -1,4 +1,4 @@
-package com.tech.map.config
+package com.tech.map.service
 
 import com.tech.map.dto.ReqRes
 import com.tech.map.model.User
@@ -50,6 +50,8 @@ class AuthService(
         response.refreshToken = refreshToken
         response.expirationDate = "24Hr"
         response.message = "Success"
+        response.role = user.role
+        response.username = user.username
 
         return response
     }

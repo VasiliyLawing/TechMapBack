@@ -29,8 +29,8 @@ class SecurityConfiguration(@Autowired private val userDetailsService: UserDetai
         httpSecurity.csrf { obj: CsrfConfigurer<HttpSecurity> -> obj.disable() }
             .authorizeHttpRequests { request ->
                 request
-                    .requestMatchers("/auth/**", "/public/**").permitAll()  // Updated here
-                    .requestMatchers("/api/**").hasAnyAuthority(Role.ADMIN.name)
+                    .requestMatchers("/api/students/**", "/api/companies/**").hasAnyAuthority(Role.ADMIN.name)
+                    .requestMatchers("/api/auth/**").permitAll()  // Updated here
                     .requestMatchers("/user/**").hasAnyAuthority(Role.USER.name)
                     .requestMatchers("/useradmin/**").hasAnyAuthority(Role.USER.name, Role.ADMIN.name)
                     .anyRequest().authenticated()
