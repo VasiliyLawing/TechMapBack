@@ -1,8 +1,9 @@
-POST localhost:8080/api/auth/login/
+POST https://techmapback.onrender.com/api/auth/register/
 Content-Type: application/json
 
-{  "password": "password",
-
-  "username": "admin"
+{
+  "password": "password",
+  "username": "admin",
+  "role": "ADMIN"
 }
 

@@ -9,16 +9,15 @@ import org.springframework.web.bind.annotation.*
 @CrossOrigin(origins = ["https://techmapfrontend.web.app"], allowCredentials = "true")
 
 @RestController
-@RequestMapping("/api/auth")
 class AuthenticationController(@Autowired private val authService: AuthService) {
 
-    @PostMapping("/register/")
+    @PostMapping("/api/register/")
     fun signUp(@RequestBody signUpRequest: ReqRes): ResponseEntity<ReqRes> = ResponseEntity.ok(authService.signUp(signUpRequest))
 
-    @PostMapping("/login/")
+    @PostMapping("/api/auth/login/")
     fun signIn(@RequestBody signInRequest: ReqRes): ResponseEntity<ReqRes> = ResponseEntity.ok(authService.signIn(signInRequest))
 
-    @PostMapping("/refresh/")
+    @PostMapping("/api/auth/refresh/")
     fun refreshToken(@RequestBody refreshTokenRequest: ReqRes): ResponseEntity<ReqRes> = ResponseEntity.ok(authService.refreshToken(refreshTokenRequest))
 
 }
