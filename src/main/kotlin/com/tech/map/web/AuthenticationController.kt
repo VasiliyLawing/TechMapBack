@@ -1,15 +1,14 @@
 package com.tech.map.web
 
-import com.tech.map.config.AuthService
+import com.tech.map.service.AuthService
 import com.tech.map.dto.ReqRes
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
-@CrossOrigin(origins = ["http://localhot:4200"], allowCredentials = "true")
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 class AuthenticationController(@Autowired private val authService: AuthService) {
 
     @PostMapping("/register/")

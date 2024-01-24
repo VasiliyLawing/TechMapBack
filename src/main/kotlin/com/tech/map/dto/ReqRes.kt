@@ -11,13 +11,13 @@ import lombok.Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 class ReqRes {
+    var token: String = ""
+    var user: User? = null
+    var role: Role = Role.USER
     var statusCode: Int? = null
     var message: String? = null
-    var token: String = ""
     var refreshToken: String? = null
     var expirationDate: String? = null
     var username: String = ""
     var password: String = ""
-    var role: Role = Role.USER
-    var user: User? = null
 }
