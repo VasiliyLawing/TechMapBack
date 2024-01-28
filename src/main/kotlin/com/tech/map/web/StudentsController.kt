@@ -28,4 +28,9 @@ class StudentsController (private var studentService: StudentService){
     fun add(@RequestBody student: Student) {
         studentService.add(student)
     }
+
+    @PutMapping("/api/students/update/")
+    fun update(@RequestBody student: Student) {
+        studentService.update(student)
+    }
 }

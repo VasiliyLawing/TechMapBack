@@ -21,4 +21,7 @@ class CompanyService(private val companyRepository: CompanyRepository) {
         companyRepository.deleteById(id)
     }
 
+    fun update(company: Company) {
+        companyRepository.save(company)
+    }
 }

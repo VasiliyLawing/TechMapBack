@@ -1,6 +1,7 @@
 package com.tech.map.web
 
 import com.tech.map.model.Company
+import com.tech.map.model.Student
 import com.tech.map.service.CompanyService
 import org.springframework.web.bind.annotation.*
 
@@ -26,5 +27,9 @@ class CompaniesController(var companyService: CompanyService) {
     @PostMapping("/api/companies/add/")
     fun add(@RequestBody company: Company) {
         companyService.add(company)
+    }
+    @PutMapping("11")
+    fun update(@RequestBody company: Company) {
+        companyService.update(company)
     }
 }

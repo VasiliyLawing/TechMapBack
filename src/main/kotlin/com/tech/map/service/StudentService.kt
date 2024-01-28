@@ -20,5 +20,9 @@ class StudentService(private val studentRepository: StudentRepository) {
     fun remove(id: Int) {
         studentRepository.deleteById(id)
     }
+    fun update(student: Student) {
+        studentRepository.save(student)
+    }
+
 
 }
