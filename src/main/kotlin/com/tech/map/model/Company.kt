@@ -1,10 +1,6 @@
 package com.tech.map.model
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.ManyToMany
-import jakarta.persistence.Table
+import jakarta.persistence.*
 
 @Entity
 @Table(name = "companies")
@@ -17,6 +13,10 @@ class Company {
     val latitude: Double? = null
     val longitude : Double? = null
 
-    @ManyToMany(mappedBy = "companies")
-    val fields: List<Field>? = null
+    @ManyToMany
+    @JoinTable(
+        name = "field_company",
+        joinColumns = [JoinColumn(name = "company_id")],
+        inverseJoinColumns = [JoinColumn(name = "field_id")]
+    )    val fields: List<Field>? = null
 }

@@ -10,15 +10,10 @@ class Field {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Int? = null
 
-    @ManyToMany
-    @JoinTable(
-        name = "field_company",
-        joinColumns = [JoinColumn(name = "field_id")],
-        inverseJoinColumns = [JoinColumn(name = "company_id")]
-    )
+    @ManyToMany(mappedBy = "fields", cascade = [CascadeType.PERSIST, CascadeType.MERGE])
     private val companies: List<Company>? = null
 
-    @OneToMany(mappedBy = "field")
+    @OneToMany(mappedBy = "field", cascade = [CascadeType.PERSIST, CascadeType.MERGE])
     private val students: List<Student>? = null
     val name: String? = null
 }
