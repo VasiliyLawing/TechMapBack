@@ -1,9 +1,6 @@
 package com.tech.map.model
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Table
+import jakarta.persistence.*
 
 
 @Entity
@@ -16,5 +13,7 @@ class Student {
     val name: String? = null
     val latitude: Double? = null
     val longitude : Double? = null
-    val field: String? = null
+    @ManyToOne
+    @JoinColumn(name = "field_id") // FETCH TYPE LAZY FOR BETTER STORAGE
+    val field: Field? = null
 }
