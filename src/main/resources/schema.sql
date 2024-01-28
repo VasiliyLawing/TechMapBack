@@ -1,28 +1,40 @@
-DROP TABLE IF EXISTS "students";
+DROP  TABLE IF EXISTS "fields" CASCADE ;
 
--- DROP SEQUENCE IF EXISTS "students_id_seq";
--- CREATE SEQUENCE students_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 CACHE 1;
+CREATE TABLE "fields" (
+                          id BIGSERIAL PRIMARY KEY,
+                          "name" text
+);
+
+
+DROP TABLE IF EXISTS "students";
 
 CREATE TABLE "students" (
                             id SERIAL PRIMARY KEY,
                             "name" text,
                             "latitude" decimal,
                             "longitude" decimal,
-                            "field" text
+                            "field_id" BIGINT,
+                            FOREIGN KEY (field_id) REFERENCES fields(id)
 );
 
-DROP TABLE IF EXISTS "companies";
-
--- DROP SEQUENCE IF EXISTS "companies_id_seq";
--- CREATE SEQUENCE companies_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 CACHE 1;
+DROP TABLE IF EXISTS "companies" CASCADE ;
 
 CREATE TABLE "companies" (
                              id SERIAL PRIMARY KEY,
                              "name" text,
                              "latitude" decimal,
-                             "longitude" decimal,
-                             "field" text
+                             "longitude" decimal
                          );
+
+DROP TABLE IF EXISTS "field_company" CASCADE ;
+CREATE TABLE field_company (
+                               field_id BIGINT,
+                               company_id BIGINT,
+                               FOREIGN KEY (field_id) REFERENCES fields(id),
+                               FOREIGN KEY (company_id) REFERENCES companies(id),
+                               PRIMARY KEY (field_id, company_id)
+);
+
 
 DROP TABLE IF EXISTS "users";
 
@@ -32,3 +44,4 @@ CREATE TABLE "users" (
                          "password" text,
                          "role" text
                      );
+

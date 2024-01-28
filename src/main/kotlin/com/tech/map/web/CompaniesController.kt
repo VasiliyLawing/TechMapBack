@@ -5,11 +5,8 @@ import com.tech.map.model.Student
 import com.tech.map.service.CompanyService
 import org.springframework.web.bind.annotation.*
 
-//@CrossOrigin()
 @RestController
 class CompaniesController(var companyService: CompanyService) {
-
-
 
     @GetMapping("/api/companies/")
     fun getAll(): Iterable<Company> {
@@ -28,7 +25,7 @@ class CompaniesController(var companyService: CompanyService) {
     fun add(@RequestBody company: Company) {
         companyService.add(company)
     }
-    @PutMapping("11")
+    @PutMapping("/api/companies/update/")
     fun update(@RequestBody company: Company) {
         companyService.update(company)
     }
