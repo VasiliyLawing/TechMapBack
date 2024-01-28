@@ -18,5 +18,8 @@ class Company {
         name = "field_company",
         joinColumns = [JoinColumn(name = "company_id")],
         inverseJoinColumns = [JoinColumn(name = "field_id")]
-    )    val fields: List<Field>? = null
+    )
+    val fields: MutableList<Field> = mutableListOf()
+
+
 }
