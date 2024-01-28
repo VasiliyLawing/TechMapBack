@@ -1,0 +1,20 @@
+PUT localhost:8080/api/companies/update/
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwNjQ2Mzk4NiwiZXhwIjoxNzA2NTUwMzg2fQ.8XVpNHzhDBIx4tqsdRR77aYG7JY62xJBxN9lDGfHQ9Z7I6_tFe9rbphj5_PPwMrhS1NqP6MR-fNj_ClF53x7qA
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Updated Company Name",
+  "latitude": 123.456,
+  "longitude": -45.678,
+  "fields": [
+    {
+      "id": 0,
+      "name": "Cyber"
+    },
+    {
+      "id": 1,
+      "name": "Cooking"
+    }
+  ]
+}
