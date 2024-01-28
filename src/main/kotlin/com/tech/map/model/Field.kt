@@ -11,9 +11,10 @@ class Field {
     val id: Int? = null
 
     @ManyToMany(mappedBy = "fields", cascade = [CascadeType.PERSIST, CascadeType.MERGE])
-    private val companies: List<Company>? = null
+    private val companies: MutableList<Company> = mutableListOf()
 
     @OneToMany(mappedBy = "field", cascade = [CascadeType.PERSIST, CascadeType.MERGE])
-    private val students: List<Student>? = null
+    private val students: MutableList<Student> = mutableListOf()
     val name: String? = null
+
 }

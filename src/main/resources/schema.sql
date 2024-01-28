@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS "companies" CASCADE ;
 
 DROP TABLE IF EXISTS "field_company" CASCADE ;
 
-DROP TABLE IF EXISTS "users";
+-- DROP TABLE IF EXISTS "users";
 
 CREATE TABLE fields (
                         id BIGSERIAL PRIMARY KEY,
@@ -23,7 +23,7 @@ CREATE TABLE students (
 );
 
 CREATE TABLE companies (
-                           id SERIAL PRIMARY KEY,
+                           id BIGSERIAL PRIMARY KEY,
                            name TEXT,
                            latitude DOUBLE PRECISION,
                            longitude DOUBLE PRECISION
@@ -39,9 +39,9 @@ CREATE TABLE field_company (
 );
 
 
-CREATE TABLE users (
-                       id SERIAL PRIMARY KEY,
-                       username TEXT,
-                       password TEXT,
-                       role TEXT
-);
+-- CREATE TABLE users (
+--                        id SERIAL PRIMARY KEY,
+--                        username TEXT,
+--                        password TEXT,
+--                        role TEXT
+-- );
