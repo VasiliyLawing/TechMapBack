@@ -15,6 +15,7 @@ class CorsConfig {
         val config = CorsConfiguration()
         config.allowCredentials = true
         config.addAllowedOrigin("https://techmapfrontend.web.app")
+        config.addAllowedOrigin("https://humble-eureka-jxw7q59jqjphq7vr-4200.app.github.dev")
         config.addAllowedHeader("*")
         config.addAllowedMethod("*")
         source.registerCorsConfiguration("/**", config)
