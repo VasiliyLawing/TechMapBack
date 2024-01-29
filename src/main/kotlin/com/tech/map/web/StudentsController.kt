@@ -4,7 +4,7 @@ import com.tech.map.model.Student
 import com.tech.map.service.StudentService
 import org.springframework.web.bind.annotation.*
 
-@CrossOrigin(origins = ["https://techmapfrontend.web.app"], allowCredentials = "true")
+@CrossOrigin()
 
 @RestController
 class StudentsController (private var studentService: StudentService){
