@@ -5,7 +5,7 @@ import com.tech.map.model.Field
 import com.tech.map.service.CompanyService
 import com.tech.map.service.FieldService
 import org.springframework.web.bind.annotation.*
-@CrossOrigin(origins = ["https://techmapfrontend.web.app"], allowCredentials = "true")
+@CrossOrigin()
 
 @RestController
 class FieldController(var fieldService: FieldService) {
