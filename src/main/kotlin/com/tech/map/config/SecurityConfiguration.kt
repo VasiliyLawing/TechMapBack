@@ -30,7 +30,7 @@ class SecurityConfiguration(@Autowired private val userDetailsService: UserDetai
             .authorizeHttpRequests { request ->
                 request
                     .requestMatchers( "/api/register/**").hasAnyAuthority(Role.ADMIN.name)
-                    .requestMatchers("/api/auth/**").permitAll()  // Updated here
+                    .requestMatchers("/api/auth/**").permitAll()
                     .requestMatchers("/api/companies/**", "/api/students/**").hasAnyAuthority(Role.USER.name, Role.ADMIN.name)
                     .anyRequest().authenticated()
             }

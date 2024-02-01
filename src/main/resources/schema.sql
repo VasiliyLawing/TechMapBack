@@ -22,6 +22,13 @@ CREATE TABLE students (
                           FOREIGN KEY (field_id) REFERENCES fields(id)
 );
 
+CREATE TABLE schools (
+                          id SERIAL PRIMARY KEY,
+                          name TEXT,
+                          latitude DOUBLE PRECISION,
+                          longitude DOUBLE PRECISION
+);
+
 CREATE TABLE companies (
                            id BIGSERIAL PRIMARY KEY,
                            name TEXT,
