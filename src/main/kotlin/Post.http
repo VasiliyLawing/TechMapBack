@@ -3,6 +3,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwNjQ3Mjk4NCwiZXhwIjoxNzA2NTU5Mzg0fQ.39cRpYUEGKzagvm64FcCj0u9eKOmbD94S5EPHjEfCKTZj6H6iH6KRjc2FBVedyrRHdtwLYrEwlOfM_uF16Uihw
 
 {
+
   "name": "Apple",
   "latitude": 42.38083525124947,
   "longitude": -87.95866242954418,
