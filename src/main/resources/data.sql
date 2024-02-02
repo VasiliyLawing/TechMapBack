@@ -11,6 +11,12 @@ INSERT INTO schools (name, latitude, longitude) VALUES
                                                                ('Highland Park', 42.38083525124947, -87.98666242954418);
 
 
+INSERT INTO companies (name, latitude, longitude) VALUES
+                                                            ('Apple', 42.38083525124947, -87.95866242954418),
+                                                            ('Apple', 42.38083525124947, -87.95866242954418);
+
+INSERT INTO field_company (company_id, field_id) VALUES
+    (1, 1);
 
 INSERT INTO companies (name, latitude, longitude) VALUES
                                                             ('Apple', 42.38083525124947, -87.95866242954418),

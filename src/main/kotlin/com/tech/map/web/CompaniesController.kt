@@ -4,6 +4,7 @@ import com.tech.map.model.Company
 import com.tech.map.model.Student
 import com.tech.map.service.CompanyService
 import org.springframework.web.bind.annotation.*
+@CrossOrigin()
 
 @RestController
 class CompaniesController(var companyService: CompanyService) {

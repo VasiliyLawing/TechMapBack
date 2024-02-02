@@ -6,6 +6,8 @@ import com.tech.map.service.CompanyService
 import com.tech.map.service.FieldService
 import org.springframework.web.bind.annotation.*
 
+@CrossOrigin()
+
 @RestController
 class FieldController(var fieldService: FieldService) {
 
@@ -30,4 +32,5 @@ class FieldController(var fieldService: FieldService) {
     fun update(@RequestBody field: Field) {
         fieldService.update(field)
     }
+
 }
