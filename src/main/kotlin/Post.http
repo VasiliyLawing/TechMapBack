@@ -17,6 +17,13 @@ Content-Type: application/json
 
 ###
 POST https://techmapback.onrender.com/api/schools/add/
-Authorization: Bearer
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbk1haW4iLCJpYXQiOjE3MDY5NDE1OTAsImV4cCI6MTcwNzAyNzk5MH0.8v8toakG0jGFwKzjDOqzT7IH42Vv6q87XvPKCcziK6XFXwqQc_2IARU-5rOWZTnzodieVqGDDQKrX04k-6F3vQ
+
+{
+  "name": "Test",
+  "longitude": 4,
+  "latitude": 5
+}
 
 ###
