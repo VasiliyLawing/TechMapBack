@@ -15,16 +15,14 @@ import org.springframework.web.filter.OncePerRequestFilter
 @Component
 class JwtAuthFilter(@Autowired private val jwtUtils: JwtUtils, @Autowired private val userDetailsService: UserDetailsService): OncePerRequestFilter() {
 
-
-
     override fun doFilterInternal(
         request: HttpServletRequest,
         response: HttpServletResponse,
         filterChain: FilterChain
     ) {
         val authHeader = request.getHeader("Authorization")
-        var jwtToken: String? = null
-        var username: String? = null
+        val jwtToken: String?
+        val username: String?
 
         if (authHeader.isNullOrBlank()) {
             filterChain.doFilter(request, response)
@@ -33,12 +31,11 @@ class JwtAuthFilter(@Autowired private val jwtUtils: JwtUtils, @Autowired privat
 
         jwtToken = authHeader.substring(7)
         username = jwtUtils.extractUsername(jwtToken)
-        //TODO: Simplify
-        if (username != null && SecurityContextHolder.getContext().authentication == null) {
+        if (SecurityContextHolder.getContext().authentication == null) {
             val userDetails = userDetailsService.loadUserByUsername(username)
 
             if (jwtUtils.isTokenValid(jwtToken, userDetails)) {
-                var securityContext = SecurityContextHolder.createEmptyContext()
+                val securityContext = SecurityContextHolder.createEmptyContext()
                 val token = UsernamePasswordAuthenticationToken(
                     userDetails,
                     null,

@@ -31,9 +31,9 @@ class SecurityConfiguration(@Autowired private val userDetailsService: UserDetai
                 request
                     .requestMatchers( "/api/register/**").hasAnyAuthority(Role.ADMIN.name)
                     .requestMatchers("/api/auth/**").permitAll()
-                    .requestMatchers("/api/companies/**", "/api/students/**").hasAnyAuthority(Role.USER.name, Role.ADMIN.name)
+                    .requestMatchers("/api/companies/**", "/api/students/**", "/api/schools/**").hasAnyAuthority(Role.USER.name, Role.ADMIN.name)
                     .anyRequest().authenticated()
-            }
+            } // TODO: Separate post and get
             .sessionManagement { manager: SessionManagementConfigurer<HttpSecurity?> ->
                 manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             }

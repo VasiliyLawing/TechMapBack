@@ -24,7 +24,6 @@ class User(private var username: String, private var password: String, @Enumerat
         return mutableListOf(SimpleGrantedAuthority(role.name))
     }
 
-
     override fun getPassword(): String {
         return password
     }
