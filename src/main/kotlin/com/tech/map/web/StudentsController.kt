@@ -5,6 +5,7 @@ import com.tech.map.service.StudentService
 import org.springframework.web.bind.annotation.*
 
 //@CrossOrigin()
+@CrossOrigin()
 
 @RestController
 class StudentsController (private var studentService: StudentService){
