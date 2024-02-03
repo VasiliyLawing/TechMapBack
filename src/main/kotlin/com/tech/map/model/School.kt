@@ -1,8 +1,6 @@
 package com.tech.map.model
 
-import jakarta.persistence.Entity
-import jakarta.persistence.Id
-import jakarta.persistence.Table
+import jakarta.persistence.*
 
 
 @Entity
@@ -10,9 +8,11 @@ import jakarta.persistence.Table
 class School {
 
     @Id
-    var id: Int? = null
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    var name: String? = null
-    var longitude: Double? = null
-    var latitude: Double? = null
+    val id: Int? = null
+
+    val name: String? = null
+    val longitude: Double? = null
+    val latitude: Double? = null
 }

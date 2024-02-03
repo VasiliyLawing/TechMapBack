@@ -1,2 +1,13 @@
 GET localhost:8080/api/schools/
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwNjc1NDUxMSwiZXhwIjoxNzA2ODQwOTExfQ.UVhHadPeJ9fAlqSfS_4KjiAFu26H1nyQPz1vhtEna_h8D2JikHJpYLsnJB4Ko2H6z47L_2Vdgg5nYh0aj8qERw
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwNjk4OTExNCwiZXhwIjoxNzA3MDc1NTE0fQ.a-eoKRdy5HDvWvy4176onYZw0R_dWqZD7QCDrsQLeV3FxIwYeDbZZ6Wagvin7m2dfb3lGH2DP4Ctm7pOQDwrQQ
+
+###
+POST localhost:8080/api/schools/add/
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwNjk4OTExNCwiZXhwIjoxNzA3MDc1NTE0fQ.a-eoKRdy5HDvWvy4176onYZw0R_dWqZD7QCDrsQLeV3FxIwYeDbZZ6Wagvin7m2dfb3lGH2DP4Ctm7pOQDwrQQ
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "longitude": 1,
+  "latitude": 1
+}
