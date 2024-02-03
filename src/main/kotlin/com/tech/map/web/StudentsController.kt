@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.*
 @RestController
 class StudentsController (private var studentService: StudentService){
 
-
-
     @GetMapping("/api/students/")
     fun getAll(): MutableIterable<Student> {
         return studentService.getAll()

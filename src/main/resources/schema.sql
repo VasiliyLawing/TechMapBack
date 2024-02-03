@@ -1,11 +1,12 @@
 DROP  TABLE IF EXISTS "fields" CASCADE ;
 
-DROP TABLE IF EXISTS "students";
+DROP TABLE IF EXISTS "students" CASCADE ;
 
 DROP TABLE IF EXISTS "companies" CASCADE ;
 
 DROP TABLE IF EXISTS "field_company" CASCADE ;
 
+DROP TABLE IF EXISTS "schools" CASCADE ;
 -- DROP TABLE IF EXISTS "users";
 
 CREATE TABLE fields (
@@ -46,9 +47,9 @@ CREATE TABLE field_company (
 );
 
 
--- CREATE TABLE users (
---                        id SERIAL PRIMARY KEY,
---                        username TEXT,
---                        password TEXT,
---                        role TEXT
--- );
+CREATE TABLE users (
+                       id SERIAL PRIMARY KEY,
+                       username TEXT,
+                       password TEXT,
+                       role TEXT
+);

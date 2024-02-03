@@ -5,6 +5,15 @@ Content-Type: application/json
   "username": "admin",
   "password": "password"
 }
+###
+POST localhost:8080/api/register/
+Content-Type: application/json
+
+{
+"username": "admin",
+"password": "password",
+  "role": "ADMIN"
+}
 
 ###
 POST https://techmapback.onrender.com/api/auth/login/
@@ -18,12 +27,28 @@ Content-Type: application/json
 ###
 POST https://techmapback.onrender.com/api/schools/add/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbk1haW4iLCJpYXQiOjE3MDY5NDE1OTAsImV4cCI6MTcwNzAyNzk5MH0.8v8toakG0jGFwKzjDOqzT7IH42Vv6q87XvPKCcziK6XFXwqQc_2IARU-5rOWZTnzodieVqGDDQKrX04k-6F3vQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbk1haW4iLCJpYXQiOjE3MDY5NDI1NjEsImV4cCI6MTcwNzAyODk2MX0.CNLxqzpIm0INXWvEr5INfmb3x5qo0oUWJwLVBORUNv1yYAAq7M3aSMn5Ec3yrXyP7NKB8luBWbXzrUJIS0xPTQ
+
+{
+  "id": 1,
+  "name": "Test",
+  "latitude": 5,
+  "longitude": 4
+}
+###
+POST localhost:8080/api/schools/add/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwNjk0MzUxNywiZXhwIjoxNzA3MDI5OTE3fQ.dneudZG21hOpcl024HkWHuLl2IbRm5icKouRlq9ylRLwFehAV6w8thmxf21Gj5Wx2GEc7GDBKqGrp8F7MmtYiQ
 
 {
   "name": "Test",
-  "longitude": 4,
-  "latitude": 5
-}
+  "latitude": 5,
+  "longitude": 4
 
+}
+###
+###
+GET localhost:8080/api/schools/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwNjk0MzUxNywiZXhwIjoxNzA3MDI5OTE3fQ.dneudZG21hOpcl024HkWHuLl2IbRm5icKouRlq9ylRLwFehAV6w8thmxf21Gj5Wx2GEc7GDBKqGrp8F7MmtYiQ
 ###
