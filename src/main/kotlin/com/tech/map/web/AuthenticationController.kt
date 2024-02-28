@@ -19,4 +19,12 @@ class AuthenticationController(@Autowired private val authService: AuthService) 
     @PostMapping("api/auth/refresh/")
     fun refreshToken(@RequestBody refreshTokenRequest: ReqRes): ResponseEntity<ReqRes> = ResponseEntity.ok(authService.refreshToken(refreshTokenRequest))
 
+    @DeleteMapping("api/auth/delete/")
+    fun deleteUser(@RequestBody user: ReqRes) {
+        ResponseEntity.ok(authService.deleteUser(user))
+    }
+    @GetMapping("api/auth/getAll/")
+    fun deleteUser(@RequestBody user: ReqRes): MutableList<User> {
+        return authService.getAll()
+    }
 }

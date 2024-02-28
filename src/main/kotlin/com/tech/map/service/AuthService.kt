@@ -74,5 +74,12 @@ class AuthService(
         return response
 
     }
+    fun getAll(): MutableList<User> {
+        return this.userRepository.findAll() //TODO: Probably wrong maybe getAll
+    }
+
+    fun deleteUser(user: ReqRes) {
+
+    }
 
 }
