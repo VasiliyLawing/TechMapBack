@@ -41,7 +41,7 @@ class AuthService(
         val response = ReqRes()
 
         authenticationManager.authenticate(UsernamePasswordAuthenticationToken(signInRequest.username, signInRequest.password))
-        val user = userRepository.findByUsername(signInRequest.username).orElseThrow()
+        val user = userRepository.findByUsername(signInRequest.username)
         println("USer is $user")
         val jwt = jwtUtils.generateToken(user)
         val refreshToken = jwtUtils.generateRefreshToken(HashMap(), user)
@@ -60,7 +60,7 @@ class AuthService(
         var response = ReqRes()
 
         val username = jwtUtils.extractUsername(refreshTokenRequest.token)
-        var user = userRepository.findByUsername(username = username).orElseThrow()
+        var user = userRepository.findByUsername(username = username)
 
         if (jwtUtils.isTokenValid(refreshTokenRequest.token, user)) {
             val jwt = jwtUtils.generateToken(user)
@@ -75,11 +75,20 @@ class AuthService(
 
     }
     fun getAll(): MutableList<User> {
-        return this.userRepository.findAll() //TODO: Probably wrong maybe getAll
+        return this.userRepository.findAll()
+    }
+    fun findUser(username: String): User {
+        println(username)
+        return userRepository.findByUsername(username)
     }
 
-    fun deleteUser(user: ReqRes) {
+    fun changeUserPassword(registrationRequest: ReqRes): ReqRes {
 
+        return signUp(registrationRequest)
+    }
+
+    fun deleteUser(user: User) {
+        return userRepository.delete(user)
     }
 
 }

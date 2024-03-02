@@ -11,7 +11,7 @@ class UserDetailsService(@Autowired private val userRepository: UserRepository):
 
 
     override fun loadUserByUsername(username: String): UserDetails {
-        return userRepository.findByUsername(username).orElseThrow()
+        return userRepository.findByUsername(username)
     }
 
 }

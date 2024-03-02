@@ -11,25 +11,25 @@ import org.springframework.web.bind.annotation.*
 @RestController
 class SchoolController (private var schoolService: SchoolService){
 
-    @GetMapping("/api/schools/")
+    @GetMapping("/api/public/schools/")
     fun getAll(): MutableIterable<School> {
         return schoolService.getAll()
     }
-    @GetMapping("/api/schools/{id}/")
+    @GetMapping("/api/public/schools/{id}/")
     fun get(@PathVariable id: Int): School {
         return schoolService.getByID(id)
     }
 
-    @DeleteMapping("/api/schools/{id}/")
+    @DeleteMapping("/api/user/schools/{id}/")
     fun remove(@PathVariable id: Int) {
         schoolService.remove(id)
     }
-    @PostMapping("/api/schools/add/")
+    @PostMapping("/api/user/schools/add/")
     fun add(@RequestBody school: School) {
         schoolService.add(school)
     }
 
-    @PutMapping("/api/schools/update/")
+    @PutMapping("/api/user/schools/update/")
     fun update(@RequestBody school: School) {
         schoolService.update(school)
     }

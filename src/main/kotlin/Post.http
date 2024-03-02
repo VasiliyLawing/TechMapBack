@@ -1,9 +1,10 @@
-POST localhost:8080/api/auth/login/
+POST localhost:8080/api/register/
 Content-Type: application/json
 
 {
   "username": "admin",
-  "password": "password"
+  "password": "password",
+  "role": "ADMIN"
 }
 
 ###
