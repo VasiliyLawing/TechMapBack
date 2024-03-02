@@ -5,3 +5,7 @@ Content-Type: application/json
   "username": "admin",
   "password": "password"
 }
+
+###
+POST localhost:8080/api/students/add/
+Content-Type: application/json

@@ -6,7 +6,7 @@ import jakarta.persistence.*
 @Table(name = "companies")
 class Company {
 
-    @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null
     val name: String? = null

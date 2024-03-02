@@ -6,7 +6,7 @@ import jakarta.persistence.*
 @Entity
 @Table(name = "fields")
 class Field {
-    @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Int? = null
 
